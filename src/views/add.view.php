@@ -2,7 +2,7 @@
 
     <main>
         <form action="" method="POST">
-            <input type="text" placeholder="title">
+            <input class="m-4" type="text" placeholder="title">
             <input type="submit" value="Add">
         </form>
     </main>
