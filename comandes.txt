@@ -1,0 +1,12 @@
+//entrar al servidor
+COMANDO: mysql -u root -p
+Enter Password:linuxlinux
+
+---------------------
+
+use demo
+
+//ESTO EN MYSQL
+create user 'demo'@'localhost' identified by 'linuxlinux';
+
+grant all privileges on demo.* to 'demo2'@'localhost';

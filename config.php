@@ -3,9 +3,21 @@
     define('VIEWS',__DIR__.'/src/views');
     define('CONTR',__DIR__.'/src/controllers');
     define('MODS',__DIR__.'/src/models');
+
+    //DNS
+    $dbhost='localhost';
+    $dbname = 'demo';
+    $dbuser = 'demo';
+    $dbpassword = 'linuxlinux';
+    $dsn = "mysql:host" . $dbhost. ';dbname=' . $dbname;
+
+    //routes
     $routes=[
         'home',
         'add',
-        'admin'
+        'admin',
+        'add-book',
+        'delete',
+        'edit'
     ];
 ?>
