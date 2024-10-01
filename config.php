@@ -5,11 +5,12 @@
     define('MODS',__DIR__.'/src/models');
 
     //DNS
-    $dbhost='localhost';
-    $dbname = 'demo';
-    $dbuser = 'demo';
-    $dbpassword = 'linuxlinux';
-    $dsn = "mysql:host" . $dbhost. ';dbname=' . $dbname;
+    $dbhost = "localhost";
+    $dbname = "demo";
+    $dbuser = "demo2";
+    $dbpassword = "linuxlinux";
+    $dsn = 'mysql:host' . $dbhost. ';dbname=' . $dbname;
+    var_dump($dsn);
 
     //routes
     $routes=[

@@ -1,5 +1,5 @@
 <?php
-    function connectSqlite($dsn){
+    function connectSqlite(string $dbname){
         try{
             $db=new PDO('sqlite:'.__DIR__.'/database/'.$dbname);
             $db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
@@ -10,7 +10,7 @@
         return $db;
     }
 
-    function connectMysql($dsn,$dbuser,$dbpassword){
+    function connectMysql(string $dsn,string $dbuser,string $dbpassword){
         try{
             $db= new PDO($dsn, $dbuser,$dbpassword);
             $db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
@@ -22,5 +22,3 @@
         }
         return $db;
     }   
-
-$db = new PDO($dsn,$dbuser,$dbpassword);

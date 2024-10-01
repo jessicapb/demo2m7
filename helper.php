@@ -15,3 +15,7 @@
         }
         http_response_code(404);
     }
+
+    function dd($arg){
+        echo '<pre>'.var_dump($arg).'</pre>';
+    }

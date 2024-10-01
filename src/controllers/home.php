@@ -1,6 +1,8 @@
 <?php
-//controlador home
-require MODS . '/home.php';
+
+require MODS.'/home.php';
+require VIEWS.'/home.view.php';
+
 $db=connectMysql($dsn,$dbuser,$dbpassword);
 $sql="SELECT * FROM books";
 $stmt=$db->prepare($sql);
@@ -9,4 +11,3 @@ $books = $stmt->fetchAll();
 var_dump($books);
 die;
 
-require VIEWS . '/home.view.php';
