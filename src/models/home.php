@@ -1,5 +1,5 @@
 <?php
-    $books=[
+/*     $books=[
         [
             'author'=>'John Fitti',
             'title'=>'Clean code',
@@ -16,7 +16,7 @@
             'year'=>2024
             ]
             
-    ];
+    ]; */
 
     function filter($items,$key,$value){
         $filtered=[];
