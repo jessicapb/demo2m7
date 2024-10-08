@@ -11,16 +11,16 @@
        
         //conectar a BBDD
         $db=connectMysql($dsn,$dbuser,$dbpassword);
-
-        //insertar
-        $stmt=$db->prepare("INSERT INTO books(title,author,year) VALUES(?,?,?)");
-        //$stmt->bindParam(':title',$title);
-        if($stmt->execute([$title, $author, $year])){
-            //volver a home
+        if(insert($db,'books',[
+            'title'=>$title,
+            'author'=>$author,
+            'year'=>$year,
+        ])){
             header('Location:home');
         }else{
             header('Location:add');
         }
+
     }
     else{
         header('Location:add');
