@@ -74,14 +74,6 @@
         }
     }
 
-    function delete($db, $query){
-        try{
-            $stmt=$db->prepare($query);
-            if($stmt->execute()){
-                return true;
-            }
-            return false;
-        }catch(PDOException $e){
-            die($e->getMessage());
-        }
+    function delete(PDO $db,string $table,array $condition){
+        
     }
