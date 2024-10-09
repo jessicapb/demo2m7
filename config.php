@@ -5,13 +5,15 @@
     define('MODS',__DIR__.'/src/models');
 
     //DNS
-    $dbhost = 'localhost';
-    $dbname = 'demo';
-    $dbuser = 'demo2';
-    $dbpassword = 'linuxlinux';
-    $dsn = 'mysql:host=' . $dbhost. ';dbname=' . $dbname;
-    //var_dump($dsn);
+    require 'src/env.php';
+    loadEnv('.env');
 
+    $dbhost = $_ENV['DB_HOST'];
+    $dbname = $_ENV['DB_NAME'];
+    $dbuser = $_ENV['DB_USER'];
+    $dbpassword = $_ENV['DB_PASSWORD'];
+
+    $dsn = 'mysql:host=' . $dbhost. ';dbname=' . $dbname;
     //routes
     $routes=[
         'home',
