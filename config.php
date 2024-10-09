@@ -20,6 +20,7 @@
         'add-book',
         'delete',
         'edit',
-        'update-book'
+        'update-book',
+        'delete-book'
     ];
 ?>

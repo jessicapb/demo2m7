@@ -57,23 +57,46 @@
                 }
                 return false;
             }catch(PDOException $e){
+                throw new ($e->getMessage());
+            }
+        }
+    }
+
+    function update(PDO $db, string $table, int $id, array $data){
+        if(is_array($data)){
+            $lista_assign=[];
+            foreach($data as $key=>$value){
+                $lista_assign[] = $key.'=?';
+            }
+            $lista_assign=implode(',',$lista_assign);
+            $sql="UPDATE {$table} SET {$lista_assign} WHERE id={$id}";
+
+            try{
+                $stmt=$db->prepare($sql);
+
+                if($stmt->execute(array_values($data))){
+                    return true;
+                }
+                return false;
+            }catch(PDOException $e){
                 die($e->getMessage());
             }
+        }else{
+            throw new Exception("Exception: No data to insert");
         }
+
     }
 
-    function update($db, $query){
+    function delete(PDO $db,string $table, int $id){
+        $sql="DELETE FROM {$table} WHERE id=?";
         try{
-            $stmt=$db->prepare($query);
-            if($stmt->execute()){
+            $stmt=$db->prepare($sql);
+            if($stmt->execute([$id])){
                 return true;
+            }else{
+                return false;
             }
-            return false;
         }catch(PDOException $e){
-            die($e->getMessage());
+            return false;
         }
-    }
-
-    function delete(PDO $db,string $table,array $condition){
-        
     }

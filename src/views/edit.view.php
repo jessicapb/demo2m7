@@ -23,7 +23,7 @@
             <input class="px-2 text-sm" name="year" type="number" placeholder="Year" value="<?=$book['year']?>">
             </div>
             <div class="col-span-2 mx-auto">
-                <button class="bg-red-600 text-white px-3 py-1 rounded" type="submit">Add</button>
+                <button class="bg-red-600 text-white px-3 py-1 rounded" type="submit">Update</button>
             </div>
     </form>
         </div>
